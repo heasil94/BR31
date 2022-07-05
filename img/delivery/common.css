@@ -1,0 +1,503 @@
+@charset "utf-8";
+@import url(./reset.css);
+
+.inner {
+    max-width: 1380px;
+    margin: auto;
+}
+
+
+
+/* header start */
+
+/* header top banner start */
+.top_ban {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    background-color: #FFD825;
+    top: 0;
+    left: 0;
+}
+
+.top_ban img {
+    position: absolute;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.top_btn {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+}
+
+.top_btn .close_btn {
+    cursor: pointer;
+}
+
+.top_btn .close_btn span {
+    background-color: #30010D;
+    border: 1px solid #30010D;
+    border-radius: 10px;
+    padding: 0.1rem;
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0px;
+    width: 30px;
+}
+
+.top_btn .close_btn span:nth-of-type(1) {
+    transform: translateY(50%) rotate(45deg);
+}
+
+.top_btn .close_btn span:nth-of-type(2) {
+    transform: translateY(-150%) rotate(-45deg);
+}
+
+/* header top banner end */
+
+@media (min-width:901px) {
+    .gnb {
+        position: relative;
+        display: flex;
+        top: 0;
+        left: 0;
+        height: 115px;
+        justify-content: space-between;
+    }
+
+
+    .gnb>* {
+        margin: 0.5rem;
+    }
+
+    .gnb .ham {
+        display: none;
+    }
+
+    .gnb .personal_btn {
+        position: absolute;
+        right: 0;
+        cursor: pointer;
+        z-index: 5;
+    }
+
+    .gnb .personal_btn a {
+        padding: 0 2rem;
+        font-weight: bold;
+        color: #30010D;
+    }
+
+    .gnb .nav_list {
+        position: relative;
+        display: flex;
+        padding-top: calc(115px - 2.5rem);
+        justify-content: space-between;
+    }
+
+    .gnb .nav_list>li {
+        position: relative;
+    }
+
+    .gnb .nav_list>li>a {
+        display: block;
+        padding: 0 1.2rem;
+        font-weight: bold;
+        color: #30010D;
+        text-align: center;
+    }
+
+    .gnb .nav_list .sub {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        opacity: 0;
+        text-align: center;
+        transition: .5s;
+        width: 100%;
+    }
+
+
+    .gnb .sub>li {
+        padding-top: 0.5rem;
+        margin: 1.2rem;
+    }
+
+    .gnb .sub a {
+        display: block;
+        font-size: 0.7rem;
+        white-space: nowrap;
+        align-items: center;
+    }
+
+    .gnb .sub img {
+        display: block;
+        left: 0;
+        height: 100px;
+        margin: auto;
+    }
+
+    .gnb .sub img:nth-of-type(1) {
+        transform: scale(0.7) translateX(-10%);
+    }
+
+    .gnb .sub img:nth-of-type(2) {
+        transform: scale(1.5) translateY(20%);
+        top: 180px;
+    }
+
+    .gnb::before {
+        content: "";
+        position: absolute;
+        border-top: 2px solid #30010D;
+        border-bottom: 2px solid #30010D;
+        background-color: white;
+        top: 115px;
+        width: 100vw;
+        height: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        z-index: 10;
+        transition: .5s;
+    }
+
+    .gnb:hover .sub {
+        opacity: 1;
+        z-index: 20;
+    }
+
+    .sub>li:hover>a {
+        color: #FF7C98;
+    }
+
+    .gnb:hover::before {
+        height: 270px;
+        opacity: 1;
+    }
+
+}
+
+@media (max-width:900px) {
+    .gnb {
+        position: relative;
+        display: flex;
+        top: 0;
+        left: 0;
+        height: 115px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    .gnb>* {
+        margin: 0.5rem;
+    }
+
+    .gnb>.nav_list,
+    .gnb>.personal_btn {
+        display: none;
+    }
+
+    .gnb .ham {
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+
+/* header end */
+
+/* main banner start*/
+.main_ban {
+    position: relative;
+    background-color: #FFD825;
+}
+
+.main_ban img {
+    width: 100%;
+}
+
+.ban_btn {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 2rem;
+    align-items: center;
+}
+
+.ban_btn>div {
+    z-index: 10;
+    border: 1px solid black;
+    background-color: rgba(0, 0, 0, 0.4)
+}
+
+.ban_btn>div h2 {
+    color: white;
+    font-weight: 600;
+    padding: 0.6rem;
+}
+
+.ban_btn::after {
+    content: "";
+    position: absolute;
+    border: 1px solid #30010D;
+    background-color: #30010D;
+    width: 100vw;
+    height: 15%;
+    left: 0;
+}
+
+/* main banner end */
+
+
+
+
+
+/* BR_MENU start */
+
+
+.BR_MENU {
+    position: relative;
+    height: 80vh;
+}
+
+.BR_MENU>.inner {
+    position: relative;
+    height: 80vh;
+}
+
+.BR_MENU>.inner>* {
+    position: absolute;
+    align-items: center;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.sec2_name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 10%;
+}
+
+.sec2_name h2 {
+    font-size: 2.5rem;
+    margin: 0 0.5rem;
+}
+
+.sec2_name img {
+    height: 10px;
+}
+
+.sec2_name img:nth-of-type(2) {
+    transform: rotate(180deg);
+}
+
+.BR_MENU .inner>span {
+    top: 30%;
+    font-size: 0.8rem;
+}
+
+.BR_MENU .menu {
+    top: 40%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.BR_MENU button {
+    position: absolute;
+    background-color: #D3C1AB;
+    border: transparent;
+    box-shadow: 0 6px 5px rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    color: white;
+    font-size: 1.2rem;
+    height: 50px;
+    bottom: 0;
+}
+
+.BR_MENU button span {
+    padding: 3rem;
+}
+
+
+.inner .menu>label {
+    font-size: 1.2rem;
+    display: inline-block;
+    width: calc(100% / 5);
+    cursor: pointer;
+    text-align: center;
+    color: #493433;
+    justify-content: space-between;
+}
+
+.menu input[type=radio] {
+    display: none;
+}
+
+.IC_list {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.IC_list>li {
+    width: calc(100% / 5 - 0.5rem);
+    text-align: center;
+    line-height: 1.5rem;
+    padding-top: 50px;
+}
+
+.IC_list>li>div {
+    position: relative;
+    left: 0;
+    padding-top: 85%;
+    border-radius: 50%;
+}
+
+.IC_list>li:nth-of-type(1)>div {
+    background-color: #FFD825;
+}
+
+.IC_list>li:nth-of-type(2)>div {
+    background-color: #E3D2BD;
+}
+
+.IC_list>li:nth-of-type(3)>div {
+    background-color: #FFD884;
+}
+
+.IC_list>li:nth-of-type(4)>div {
+    background-color: #FFE1E7;
+}
+
+.IC_list>li:nth-of-type(5)>div {
+    background-color: #F4F4F4;
+}
+
+.IC_list div img {
+    position: absolute;
+}
+
+.IC_list li>div img:nth-of-type(1) {
+    width: 70%;
+    left: 50%;
+    bottom: 4%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.IC_list li>div img:nth-of-type(2) {
+    width: 20%;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.IC_list>li>span:nth-of-type(1) {
+    font-size: 0.75rem;
+}
+
+.IC_list>li>span:nth-of-type(2) {
+    font-size: 1.2rem;
+}
+
+/* BR_MENU end*/
+
+/* BR_noti start */
+
+.BR_noti{
+    padding-top: 5%;
+    border: 1px solid black;
+    height: 60vh;
+}
+
+/* .BR_noti::before{
+    content: "";
+    width: 100%;
+    height: 60vh;
+    background-color: #FF7C98;
+} */
+.BR_noti .inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.event,
+.br_order {
+    border: 1px solid red;
+    width: calc(100% / 2 - 1rem);
+}
+
+
+
+
+
+.eve_ban{
+    position: relative;
+    border: 1px solid blue;
+    height: 35vh;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.eve_ban > *{
+    position: absolute;
+}
+
+.eve_ban img {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.eve_ban button{
+    border: none;
+    background-color: transparent;
+    right: 10%;
+    bottom: 15%;
+}
+.eve_ban span {
+    background-color: #18418F;
+    border-radius: 50%;
+    margin: 0.5rem;
+    padding: 0 0.5rem;
+}
+
+.br_order
+
+.order_ban{
+    position: relative;
+    background-color: #FF7C98;
+    height: 35vh;
+    border-radius: 25px;
+    overflow: hidden;
+    padding: 2rem;
+}
+
+.order_ban .order_icon{
+    display: flex;
+    justify-content: space-between;
+}
+.order_ban .order_icon > img {
+    width: calc(100% / 4 - 0.5rem);
+}
+
+.order_ban p {
+    color: white;
+    padding-top: 5%;
+}
+
+.order_ban button {display: none;}
+
+/* BR_noti end*/
